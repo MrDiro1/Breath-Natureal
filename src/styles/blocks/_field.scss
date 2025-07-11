@@ -5,9 +5,12 @@
 		width: 100%;
 
 		color: var(--color-light);
-
 		border: var(--border);
 		border-radius: rem(8);
+
+		@include tablet {
+			background-color: var(--color-dark-green);
+		}
 
 		@include hover {
 			box-shadow: var(--shadow);

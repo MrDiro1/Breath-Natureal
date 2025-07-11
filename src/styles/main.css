@@ -700,6 +700,11 @@ a:focus-visible {
   border: var(--border);
   border-radius: 0.5rem;
 }
+@media (width <= 63.99875rem) {
+  .field__control {
+    background-color: var(--color-dark-green);
+  }
+}
 @media (any-hover: hover) {
   .field__control:hover {
     box-shadow: var(--shadow);
