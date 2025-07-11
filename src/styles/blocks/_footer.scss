@@ -1,0 +1,121 @@
+@use '../helpers/' as *;
+
+.footer {
+	padding-block: rem(90);
+	background-color: var(--color-footer-green);
+
+	@include mobile {
+		padding-block: rem(45);
+	}
+
+	&__inner {
+		display: grid;
+		row-gap: rem(90);
+	}
+
+	&__logo-wrapper {
+		display: flex;
+		align-items: center;
+		column-gap: rem(13);
+	}
+
+	&__logo-sign {
+		font-weight: 900;
+	}
+
+	&__logo-description {
+		color: var(--color-light) !important;
+	}
+
+	&__main {
+		display: grid;
+		grid-template-columns: rem(580) 1fr auto;
+		column-gap: rem(130);
+		align-items: start;
+
+		@include desktop-l {
+			column-gap: rem(90);
+		}
+
+		@include desktop-s {
+			grid-template-columns: repeat(3, 1fr);
+			justify-content: center;
+			align-items: center;
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			row-gap: rem(30);
+		}
+	}
+
+	&__column {
+		display: grid;
+		row-gap: rem(45);
+
+		@include tablet {
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__list {
+		display: grid;
+		row-gap: rem(26);
+	}
+
+	&__subscribe-form {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		border-radius: rem(8);
+		border: 2px solid #fff;
+		padding: rem(5);
+		display: flex;
+	}
+
+	&__subscribe-form-input {
+		background-color: transparent;
+		color: var(--color-light);
+		outline: none;
+		border: none;
+		padding-block: rem(23);
+		padding-left: rem(29);
+
+		&::placeholder {
+			font-weight: 500;
+			font-size: fluid(24, 16);
+		}
+	}
+
+	&__subscribe-form-button {
+		background-color: var(--color-light);
+		color: var(--color-dark);
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: fluid(22, 16);
+		border-radius: rem(8);
+
+		@include hover {
+			background-color: var(--color-dark);
+			color: var(--color-light);
+			border: 1px solid var(--color-light);
+		}
+
+		@include desktop-l {
+			width: 100%;
+		}
+	}
+
+	&__accent {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__item {
+		@include desktop-s {
+			display: grid;
+		}
+	}
+}

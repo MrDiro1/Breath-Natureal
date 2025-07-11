@@ -1,0 +1,42 @@
+@use 'helpers' as *;
+
+:root {
+	--container-width: #{rem(1600)};
+	--container-padding-x: #{rem(16)};
+
+	--opacity: 0.75;
+	--transition-duration: 0.2s;
+
+	--font-family-base: 'Inter', sans-serif;
+
+	--color-light: #fff;
+	--color-light-accent: rgba(255, 255, 255, 0.75);
+
+	--color-dark-green: #1b2316;
+	--color-footer-green: #222c1d;
+	--color-green-accent: #272e22;
+	--color-dark: #000000;
+
+	--text-shadow: 0 2px 2px rgba(0, 0, 0, 0.09), 0 5px 4px rgba(0, 0, 0, 0.13),
+		0 8px 6px rgba(0, 0, 0, 0.15), 0 13px 10px rgba(0, 0, 0, 0.18),
+		0 19px 15px rgba(0, 0, 0, 0.21), 0 30px 24px rgba(0, 0, 0, 0.23),
+		0 50px 40px rgba(0, 0, 0, 0.27), 0 100px 80px rgba(0, 0, 0, 0.36);
+
+	--color-green-border: #3a4b2e;
+	--color-green-soft: #33402b;
+	--color-green-hover: #405137;
+	--color-green-light-accent: #5a6d4a;
+
+	--border: #{rem(2)} solid var(var(--color-light));
+	--border-accent: 2px solid var(--color-green-light-accent);
+	--border-radius-small: #{rem(12)};
+	--border-radius-medium: #{rem(45)};
+	--border-radius-large: #{rem(77)};
+	--border-radius-biggest: #{rem(150)};
+	--border-radius-accent: #{rem(92)};
+
+	--strange-shadow: 0 -3px 2px 0 rgba(0, 0, 0, 0.05),
+		0 -7px 5px 0 rgba(0, 0, 0, 0.07), 0 -12px 10px 0 rgba(0, 0, 0, 0.09),
+		0 -22px 18px 0 rgba(0, 0, 0, 0.1), 0 -41px 33px 0 rgba(0, 0, 0, 0.12),
+		0 -98px 80px 0 rgba(0, 0, 0, 0.17);
+}

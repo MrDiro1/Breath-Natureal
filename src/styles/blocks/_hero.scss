@@ -1,0 +1,168 @@
+@use '../helpers/' as *;
+
+.hero {
+	background: url('../../../assets/images/bg.jpg');
+	background-position: end;
+	background-size: cover;
+	background-repeat: no-repeat;
+	&__main {
+		overflow: hidden !important;
+		justify-content: space-between;
+		display: grid;
+
+		grid-template-areas:
+			'content1 swiper'
+			'. swiper'
+			'review swiper'
+			'review .';
+
+		@include desktop-s {
+			row-gap: rem(10);
+			column-gap: rem(20);
+			grid-template-areas:
+				'content1 content1'
+				'swiper review';
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				'content1'
+				'swiper'
+				'review';
+		}
+
+		&-content-wrapper {
+			display: grid;
+			row-gap: rem(20);
+			grid-area: content1;
+
+			@include desktop-s-above {
+				max-width: rem(899);
+			}
+		}
+
+		@include desktop-s {
+			padding-top: rem(50);
+		}
+
+		@include tablet {
+			padding-top: rem(25);
+		}
+	}
+
+	&__description {
+		font-size: 500;
+	}
+
+	&__swiper {
+		grid-area: swiper;
+
+		@include tablet {
+			justify-self: center;
+		}
+	}
+
+	&__content-accent {
+		display: flex;
+		column-gap: rem(35);
+
+		@include mobile {
+			flex-direction: column;
+			row-gap: rem(20);
+		}
+	}
+
+	&__content-actions {
+		display: flex;
+		align-items: center;
+		column-gap: rem(16);
+
+		&-sign {
+			font-size: rem(20);
+		}
+	}
+
+	&__content-play-button {
+		all: unset;
+		opacity: 0.75;
+		position: relative;
+		width: rem(64);
+		height: rem(64);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition-duration: var(--transition-duration);
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border: rem(2) solid var(--color-light-accent);
+			border-radius: 50%;
+			transform: translateX(-2px);
+		}
+
+		@include hover {
+			opacity: 1;
+		}
+	}
+
+	&__content-image {
+		@include square(#{rem(34)});
+	}
+
+	&__review-card {
+		grid-area: review;
+
+		@include desktop-s {
+			align-self: end;
+		}
+
+		@include tablet {
+			justify-self: center;
+
+			margin-top: rem(40);
+		}
+	}
+
+	&__content-link {
+		@include mobile {
+			justify-content: center;
+		}
+	}
+
+	&__trendy {
+		display: grid;
+		row-gap: rem(130);
+		padding-top: rem(80);
+		padding-bottom: rem(99);
+
+		&-card {
+			&.gradient-border {
+				border-radius: var(--border-radius-biggest);
+
+				&::before {
+					border-radius: var(--border-radius-biggest);
+				}
+			}
+		}
+
+		&-title {
+			position: relative;
+			font-weight: 600;
+			text-align: center;
+			text-shadow: var(--text-shadow);
+		}
+
+		&-list {
+			display: grid;
+			row-gap: rem(136);
+
+			@include tablet {
+				row-gap: rem(120);
+			}
+		}
+	}
+}

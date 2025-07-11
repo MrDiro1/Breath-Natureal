@@ -1,0 +1,75 @@
+@use '../helpers/' as *;
+
+.our-best {
+	padding-top: rem(285);
+	padding-bottom: rem(170);
+	display: grid;
+
+	&__title {
+		text-align: center;
+		position: relative;
+
+		&::after {
+			left: 57%;
+		}
+	}
+
+	.our-best__slider.swiper {
+		width: 100%;
+		padding-bottom: rem(133);
+		position: relative;
+
+		@include desktop-l {
+			max-width: 100%;
+			width: fluid(1300, 360);
+		}
+
+		.swiper-pagination {
+			display: flex;
+
+			justify-content: center;
+			column-gap: rem(8);
+			transform: translateY(rem(-30));
+		}
+
+		.swiper-pagination-bullet {
+			position: relative;
+			background-color: var(--color-light);
+			color: var(--color-light);
+			opacity: 0.8;
+			width: rem(8);
+			height: rem(8);
+			display: inline-block;
+			z-index: 1;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: rem(32);
+				height: rem(32);
+				border-radius: 50%;
+				background-color: transparent;
+				z-index: -1;
+			}
+		}
+
+		.swiper-pagination-bullet-active {
+			width: rem(21);
+			border-radius: rem(46);
+			opacity: 1;
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			--swiper-navigation-size: rem(24);
+			padding: rem(10);
+			color: var(--color-light-accent);
+		}
+		.swiper-button-disabled {
+			display: block;
+		}
+	}
+}

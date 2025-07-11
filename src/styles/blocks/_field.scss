@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+
+.field {
+	&__control {
+		width: 100%;
+
+		color: var(--color-light);
+
+		border: var(--border);
+		border-radius: rem(8);
+
+		@include hover {
+			box-shadow: var(--shadow);
+			border-color: var(--color-green-accent);
+		}
+	}
+}

@@ -1,0 +1,30 @@
+@use '../helpers/' as *;
+
+.soc1als {
+	&__list {
+		display: flex;
+		column-gap: rem(61);
+
+		@include mobile {
+			column-gap: rem(20);
+		}
+	}
+
+	&__link {
+		cursor: pointer;
+		opacity: 1;
+	}
+
+	&__item {
+		svg {
+			@include square(#{rem(45)});
+			fill: #fff;
+			color: #fff;
+			transition-duration: var(--transition-duration);
+
+			@include hover {
+				opacity: 0.75;
+			}
+		}
+	}
+}

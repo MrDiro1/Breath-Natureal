@@ -1,0 +1,91 @@
+@use '../helpers/' as *;
+
+.selling {
+	padding-top: rem(143);
+	&__title {
+		position: relative;
+		&::after {
+			left: 60%;
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		place-items: center;
+		column-gap: rem(41);
+		row-gap: rem(113);
+
+		@include desktop-l {
+			column-gap: rem(10);
+		}
+
+		@include laptop {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__inner {
+		display: grid;
+		row-gap: rem(142);
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__trendy-card {
+		@include blur-accent;
+		border-radius: rem(77);
+		display: grid;
+		grid-template-columns: 1fr;
+		width: rem(512);
+		row-gap: rem(15);
+		padding-inline: rem(25);
+
+		@include desktop-l {
+			width: fluid(459, 420);
+		}
+
+		@include mobile-s {
+			width: fluid(420, 350);
+		}
+	}
+	&__trendy-card .trendy-card__body {
+		row-gap: rem(37);
+		padding-inline: rem(40);
+		padding-bottom: rem(50);
+
+		@include tablet {
+			row-gap: rem(25);
+			padding-bottom: rem(30);
+			padding-inline: rem(30);
+		}
+	}
+	&__trendy-card .trendy-card__title {
+		font-weight: 400;
+		opacity: var(--opacity);
+		text-shadow: none;
+	}
+	&__trendy-card .trendy-card__description {
+		opacity: var(--opacity);
+		font-size: fluid(24, 14);
+	}
+
+	&__trendy-card .trendy-card__accents {
+		align-items: end;
+		column-gap: rem(16);
+
+		@include mobile {
+			align-items: start;
+		}
+	}
+
+	&__trendy-card .trendy-card__subtitle {
+		font-weight: 400;
+		opacity: var(--opacity);
+	}
+}

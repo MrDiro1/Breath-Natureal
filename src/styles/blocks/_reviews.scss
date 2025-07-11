@@ -1,0 +1,68 @@
+@use '../helpers/' as *;
+
+.reviews {
+	padding-top: rem(219);
+
+	@include desktop-s {
+		padding-top: rem(120);
+	}
+
+	&__title {
+		position: relative;
+		text-align: center;
+	}
+
+	&__inner {
+		display: grid;
+		row-gap: rem(182);
+
+		@include desktop-s {
+			row-gap: rem(120);
+		}
+	}
+
+	&__list {
+		display: flex;
+		column-gap: rem(33);
+
+		@include desktop-s {
+			column-gap: rem(20);
+		}
+
+		@include tablet {
+			flex-direction: column;
+			row-gap: rem(30);
+		}
+	}
+
+	&__review-card {
+		height: 100%;
+		width: 100%;
+		padding: rem(95) rem(51) rem(95) rem(58);
+		border-radius: rem(77);
+		row-gap: rem(61);
+
+		@include desktop-s {
+			padding: rem(50);
+			row-gap: rem(40);
+		}
+
+		@include mobile-s {
+			row-gap: rem(25);
+		}
+
+		.review-card__description {
+			font-size: fluid(24, 18);
+		}
+
+		.review-card__title {
+			opacity: 1;
+		}
+
+		.review-card__image {
+			border-radius: 50%;
+			@include square(#{rem(88)});
+			align-self: center;
+		}
+	}
+}

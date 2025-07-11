@@ -1,0 +1,59 @@
+@use '../helpers/' as *;
+
+.burger-button {
+	@include square(rem(31));
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	color: var(--color-light);
+
+	&__line {
+		position: absolute;
+		width: 100%;
+		height: rem(2);
+		background: currentColor;
+		border-radius: rem(2);
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+	&__line:nth-child(1) {
+		transform: translateY(-0.4em);
+	}
+
+	&__line:nth-child(2) {
+		transform: translateY(0.4em);
+	}
+
+	&.is-active {
+		.burger-button__line {
+			&:nth-child(1) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: rem(10);
+		border: 1px solid transparent;
+		transition: border-color 0.2s ease, border-radius 0.2s ease;
+	}
+
+	@include hover {
+		&::before {
+			border-color: var(--color-light-accent);
+		}
+	}
+}

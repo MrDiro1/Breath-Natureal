@@ -1,0 +1,119 @@
+@use 'helpers' as *;
+
+html {
+	&.is-lock {
+		overflow: hidden;
+	}
+}
+
+body {
+	@include fluid-text(23, 14);
+	overflow-y: auto;
+
+	font-family: var(--font-family-base);
+
+	color: var(--color-light);
+	background-color: var(--color-dark-green);
+}
+
+main {
+	flex-grow: 1;
+}
+
+h1,
+p,
+a {
+	opacity: var(--opacity);
+	color: var(--color-light);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	color: var(--color-light);
+}
+
+h1,
+.h1 {
+	@include fluid-text(118, 40);
+	font-size: 600;
+}
+
+h2,
+.h2 {
+	@include fluid-text(55, 25);
+}
+
+h3,
+.h3 {
+	@include fluid-text(38, 22);
+}
+
+h4,
+.h4 {
+	@include fluid-text(28, 18);
+}
+
+h5,
+.h5 {
+	@include fluid-text(24, 18);
+}
+
+h6,
+.h6 {
+	@include fluid-text(20, 16);
+}
+
+a,
+button,
+label,
+textarea,
+input,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+a {
+	@include hover {
+		opacity: 1;
+	}
+
+	&[class] {
+		text-decoration: none;
+	}
+}
+
+:focus-visible {
+	outline: rem(2) dashed var(--color-light);
+	outline-offset: rem(4);
+	transition-duration: 0 !important;
+}
+
+a,
+button {
+	&[aria-label] {
+		position: relative;
+
+		&::before {
+			content: '';
+			@include abs-center;
+			@include square(rem(44));
+		}
+	}
+}
+
+button:focus-visible,
+a:focus-visible {
+	outline: 2px dashed var(--color-green-light-accent);
+	outline-offset: 3px;
+}

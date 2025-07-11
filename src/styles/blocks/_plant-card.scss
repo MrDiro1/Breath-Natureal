@@ -1,0 +1,39 @@
+@use '../helpers/' as *;
+
+.plant-card {
+	display: inline-flex;
+
+	padding-bottom: rem(84);
+	flex-direction: column;
+
+	row-gap: rem(36);
+	padding-inline: rem(30);
+	border-radius: rem(77);
+
+	@include blur-accent;
+
+	&.gradient-border {
+		border-radius: var(--border-radius-large);
+
+		&::before {
+			border-radius: var(--border-radius-large);
+		}
+	}
+
+	&__image {
+		margin-top: rem(-120);
+	}
+
+	&__main-content {
+		display: grid;
+		padding-left: rem(42);
+		row-gap: rem(20);
+		justify-content: start;
+	}
+
+	&__button {
+		@include hover {
+			opacity: 0.7;
+		}
+	}
+}

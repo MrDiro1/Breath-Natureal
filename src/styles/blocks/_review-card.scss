@@ -1,0 +1,43 @@
+@use '../helpers/' as *;
+
+.review-card {
+	width: fluid(409, 340);
+	@include review-card-blur;
+	border-radius: rem(45);
+
+	display: block;
+	padding: rem(45);
+	display: grid;
+	row-gap: rem(22);
+
+	&.gradient-border {
+		border-radius: var(--border-radius-large);
+
+		&::before {
+			border-radius: var(--border-radius-large);
+		}
+	}
+
+	&__author {
+		display: flex;
+		column-gap: rem(28);
+	}
+
+	&__image {
+		@include square(#{rem(64)});
+	}
+
+	&__extra {
+		display: grid;
+		row-gap: rem(5);
+	}
+
+	&__list {
+		display: flex;
+		column-gap: rem(9);
+	}
+
+	&__description {
+		font-size: rem(17);
+	}
+}

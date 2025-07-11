@@ -1,0 +1,66 @@
+@use '../helpers/' as *;
+
+.about-slide {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border-radius: rem(92);
+	padding: rem(44);
+
+	&.gradient-border {
+		border-radius: var(--border-radius-accent);
+
+		&::before {
+			border-radius: var(--border-radius-accent);
+		}
+	}
+
+	@include desktop-s {
+		flex-direction: column;
+		align-items: center;
+		row-gap: rem(20);
+	}
+
+	&__image {
+		@include square(rem(780));
+		margin-top: rem(-120);
+
+		@include desktop-l {
+			@include square(fluid(559, 459));
+			margin-block: auto;
+		}
+
+		@include mobile {
+			@include square(fluid(459, 359));
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(42);
+		align-items: start;
+		justify-content: center;
+	}
+
+	&__title {
+		opacity: var(--opacity);
+	}
+
+	&__button {
+		@include hover {
+			opacity: 0.75;
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		align-items: center;
+		column-gap: rem(43);
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			position: static;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/burger-button';
+@use 'blocks/select';
+@use 'blocks/field';
+@use 'blocks/header';
+@use 'blocks/plant-card';
+@use 'blocks/swiper';
+@use 'blocks/review-card';
+@use 'blocks/hero';
+@use 'blocks/trendy-card';
+@use 'blocks/selling.scss';
+@use 'blocks/reviews';
+@use 'blocks/about-slide';
+@use 'blocks/our-best';
+@use 'blocks/soc1als';
+@use 'blocks/footer';
